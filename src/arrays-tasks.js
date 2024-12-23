@@ -334,9 +334,8 @@ function selectMany(arr, childrenSelector) {
  *   calculateBalance([]) => 0
  */
 function calculateBalance(arr) {
-  const arrayDiff = function (array) {
-    return array.reverse().reduce((prev, cur) => cur - prev, 0);
-  };
+  const arrayDiff = (array) =>
+    array.reverse().reduce((prev, cur) => cur - prev, 0);
 
   return arr.reduce((prev, cur) => prev + arrayDiff(cur), 0);
 }
@@ -480,9 +479,7 @@ function getHexRGBValues(arr) {
  *   getMaxItems([ 10, 10, 10, 10 ], 3) => [ 10, 10, 10 ]
  */
 function getMaxItems(arr, n) {
-  const compare = function (a, b) {
-    return b - a;
-  };
+  const compare = (a, b) => b - a;
 
   return arr.sort(compare).slice(0, n);
 }
